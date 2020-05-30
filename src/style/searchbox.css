@@ -1,7 +1,13 @@
-.search-box {
-    margin: 30px;
+.search-box input {
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    text-align: center;
 }
 
-.search-box input {
-    border-radius: 10px;
+.search-box button {
+    margin-top: 15px;
+    font-weight: bold;
 }
