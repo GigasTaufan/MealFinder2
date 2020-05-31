@@ -1,16 +1,13 @@
-function DataSource(onSuccess, onFailed) {
-    this.onSuccess = onSuccess;
-    this.onFailed = onFailed;
-}
+class DataSource {
 
-DataSource.prototype.searchMeal = function (keyword) {
-    var filteredMeals = meals.filter(function (meal) {
-        return meal.name.toUpperCase().includes(keyword.toUpperCase());
-    });
-
-    if (filteredMeals.length) {
-        this.onSuccess(filteredMeals);
-    } else {
-        this.onFailed(keyword + " is not found");
+    static searchMeal(keyword) {
+        return new Promise((resolve, reject) => {
+            const filteredMeals = meals.filter(meal => meal.name.toUpperCase().includes(keyword.toUpperCase()));
+            if (filteredMeals.length) {
+                resolve(filteredMeals);
+            } else {
+                reject(`${keyword} is not found`);
+            }
+        });
     }
-};
+}

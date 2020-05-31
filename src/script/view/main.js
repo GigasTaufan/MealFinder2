@@ -1,20 +1,25 @@
-const main = function () {
+const main = () => {
     const searchBar = document.querySelector("#searchBar");
     const searchBtn = document.querySelector("#searchBtn");
     const mealList = document.querySelector("#mealList");
 
-    const onButtonSearchClicked = function () {
-        const dataSource = new DataSource(renderResult, fallbackResult);
-        dataSource.searchMeal(searchBar.value);
+    const onButtonSearchClicked = () => {
+        // const dataSource = new DataSource(renderResult, fallbackResult);
+        // dataSource.searchMeal(searchBar.value);
+        DataSource.searchMeal(searchBar.value)
+            .then(renderResult)
+            .catch(fallbackResult)
     };
 
-    const renderResult = function (results) {
+    const renderResult = results => {
         mealList.innerHTML = "";
         results.forEach(function (meal) {
-            const name = meal.name;
-            const fanArt = meal.fanArt;
-            const country = meal.country;
-            const instruction = meal.instruction;
+            const {
+                name,
+                fanArt,
+                country,
+                instruction
+            } = meal;
 
             const mealElement = document.createElement("div");
             mealElement.setAttribute("class", "meal");
@@ -29,7 +34,7 @@ const main = function () {
         })
     };
 
-    const fallbackResult = function (message) {
+    const fallbackResult = message => {
         mealList.innerHTML = "";
         mealList.innerHTML += '<h2 class="placeholder">' + message + '</h2>'
     };
