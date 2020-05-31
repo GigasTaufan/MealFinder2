@@ -1,3 +1,5 @@
+import meals from "./meals.js";
+
 class DataSource {
 
     static searchMeal(keyword) {
@@ -11,3 +13,5 @@ class DataSource {
         });
     }
 }
+
+export default DataSource;
