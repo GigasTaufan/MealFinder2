@@ -14,6 +14,7 @@ const main = function () {
             const name = meal.name;
             const fanArt = meal.fanArt;
             const country = meal.country;
+            const instruction = meal.instruction;
 
             const mealElement = document.createElement("div");
             mealElement.setAttribute("class", "meal");
@@ -21,7 +22,8 @@ const main = function () {
             mealElement.innerHTML = '<img class="fan-art-meal" src="' + fanArt + '" alt="Fan Art">\n' +
                 '<div class="meal-info">\n' +
                 '<h2>' + name + '</h2>\n' +
-                '<p>' + country + '</p>' +
+                '<h4>' + country + '</h4>' +
+                '<p>' + instruction + '</p>' +
                 '</div>';
             mealList.appendChild(mealElement);
         })
