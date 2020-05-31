@@ -24,12 +24,19 @@
     <main>
         <!-- search box -->
         <div class="search-box text-center">
-            <input type="text" class="form-control" placeholder="Search your meal here...">
+            <input type="search" class="form-control" id="searchBar" placeholder="Search your meal here...">
             <button class="btn btn-primary" id="searchBtn" type="submit">Search</button>
         </div>
         <!-- meal list -->
-        <div class="meal-list"></div>
+        <div id="mealList"></div>
     </main>
+
+    <!-- Javascript -->
+    <script src="src/script/data/meals.js"></script>
+    <script src="src/script/data/data-source.js"></script>
+    <script src="src/script/view/main.js"></script>
+    <script src="app.js"></script>
+    <!-- End of Javascript -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
