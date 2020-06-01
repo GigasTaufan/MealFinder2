@@ -1,16 +1,25 @@
+import "../component/search-box.js";
 import DataSource from "../data/data-source.js";
 
 const main = () => {
-    const searchBar = document.querySelector("#searchBar");
-    const searchBtn = document.querySelector("#searchBtn");
+    const searchBar = document.querySelector("search-box");
     const mealList = document.querySelector("#mealList");
 
-    const onButtonSearchClicked = () => {
-        // const dataSource = new DataSource(renderResult, fallbackResult);
-        // dataSource.searchMeal(searchBar.value);
-        DataSource.searchMeal(searchBar.value)
-            .then(renderResult)
-            .catch(fallbackResult)
+    // const onButtonSearchClicked = () => {
+    //     // const dataSource = new DataSource(renderResult, fallbackResult);
+    //     // dataSource.searchMeal(searchBar.value);
+    //     DataSource.searchMeal(searchBar.value)
+    //         .then(renderResult)
+    //         .catch(fallbackResult)
+    // };
+
+    const onButtonSearchClicked = async () => {
+        try {
+            const result = await DataSource.searchMeal(searchBar.value);
+            renderResult(result);
+        } catch (message) {
+            fallbackResult(message)
+        }
     };
 
     const renderResult = results => {
@@ -41,7 +50,8 @@ const main = () => {
         mealList.innerHTML += '<h2 class="placeholder">' + message + '</h2>'
     };
 
-    searchBtn.addEventListener("click", onButtonSearchClicked);
+    // searchBtn.addEventListener("click", onButtonSearchClicked);
+    searchBar.clickEvent = onButtonSearchClicked;
 };
 
 export default main;
