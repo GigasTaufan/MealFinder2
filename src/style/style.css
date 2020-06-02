@@ -1,6 +1,8 @@
+@import "navbar.css";
 @import "header.css";
 @import "searchbox.css";
 @import "meallist.css";
+@import "footer.css";
 
 * {
     padding: 0;
