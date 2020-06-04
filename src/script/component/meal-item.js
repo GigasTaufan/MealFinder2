@@ -6,11 +6,11 @@ class MealItem extends HTMLElement {
 
     render() {
         this.innerHTML = `
-            <img class="fan-art-meal" src="${this._meal.fanArt}" alt="Fan Art">
+            <img class="fan-art-meal" src="${this._meal.strMealThumb}" alt="Fan Art">
             <div class = "meal-info" >
-                <h2>${this._meal.name}</h2>
-                <h4>${this._meal.country}</h4>
-                <p>${this._meal.instruction}</p>
+                <h2>${this._meal.strMeal}</h2>
+                <h4>${this._meal.strArea}</h4>
+                <p>${this._meal.strInstructions}</p>
             </div>`;
     }
 }
