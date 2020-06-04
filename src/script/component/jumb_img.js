@@ -5,7 +5,7 @@ class Jumbimg extends HTMLElement {
     render() {
         this.innerHTML = `
         <h2 class="text-center">The Best Place To Find A Good Meal</h2>
-        <img class = "image-header" src = "src/img/undraw_breakfast_psiw.png" alt = "Food Image"> `;
+        <img class = "image-header" alt = "Food Image"> `;
     }
 }
 
