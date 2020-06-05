@@ -6,5 +6,6 @@ import "regenerator-runtime";
 import imgSrc from "./img/undraw_breakfast_psiw.png";
 import main from "./script/view/main.js";
 
+document.querySelector('.navImg').src = imgSrc;
 document.querySelector('.image-header').src = imgSrc;
 document.addEventListener("DOMContentLoaded", main);

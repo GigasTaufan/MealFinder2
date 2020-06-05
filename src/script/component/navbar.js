@@ -7,7 +7,7 @@ class Navbar extends HTMLElement {
         this.innerHTML = `
             <nav class="navbar navbar-custom fixed-top">
                 <a class="navbar-brand" href="#">
-                    <img src="src/img/undraw_breakfast_psiw.png" alt="">
+                    <img class="navImg" alt="Food Image">
                     <span class="text-white">Meal Finder</span>
                 </a>
             </nav>
